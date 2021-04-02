@@ -2,6 +2,6 @@
 
 Projet SI  REST ANGULAR
 
-NAIT SAADA Tarek  
-RAHMANI Sylia
-ZEMALI Lynda
+- NAIT SAADA Tarek  
+- RAHMANI Sylia
+- ZEMALI Lynda
