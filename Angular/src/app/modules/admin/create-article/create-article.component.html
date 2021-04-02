@@ -1,0 +1,123 @@
+<!--<form #connexionForm="ngForm" (ngSubmit)="connexion(connexionForm)">
+    <div class="row mb-3" style="width: 200px ">
+      <label for="InputEmail1">Email address</label>
+      <input type="email" class="fadeIn second" id="Inputemail"  name="email" placeholder="email" #email="ngModel" 
+      ngModel email required>
+      <div class ="alert alert-danger" *ngIf="email.errors?.required && email.touched"   role="alert">
+        Invalid pattern
+        
+    </div>
+    </div>
+    <div class= "row mb-3" style="width: 200px">
+      <label for="InputPassword1">Password</label>
+      <input type="password" class="form-control" id="InputPassword1" name="password"
+       #password="ngModel" ngModel required minlength="8">
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="connexionForm.invalid">Log in</button>
+</form>-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple login form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      }
+      form {
+      border: 5px solid #f1f1f1;
+      }
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      button {
+      background-color: #8ebf42;
+      color: white;
+      padding: 14px 0;
+      margin: 10px 0;
+      border: none;
+      cursor: grabbing;
+      width: 100%;
+      }
+      h1 {
+      text-align:center;
+      font-size:18;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: left;
+      margin: 24px 24px 12px;
+      }
+      .container {
+      padding: 10px 0;
+      text-align:left;
+      }
+      span.psw {
+      float: right;
+      padding-top: 0;
+      padding-right: 10px;
+      }
+      /* Change styles for span on extra small screens */
+      @media screen and (max-width: 300px) {
+      span.psw {
+      display: block;
+      float: none;
+      }}
+    </style>
+  </head>
+  <body>
+    <form #addForm="ngForm" (ngSubmit)="add(addForm)">
+      <h1  >Ajouter un article </h1>
+      <div class="formcontainer">
+      <hr/>
+     
+        <label for="libelle"><strong>Libelle</strong></label>
+        <input type="text" class="form-control" id="libelle" name="libelle"
+        placeholder="libelle" ngModel required >
+
+        <label for="marque"><strong>Marque</strong></label>
+        <input type="text" class="form-control" id="input3" placeholder="marque" name="marque" 
+               #marque="ngModel" ngModel marque required>
+
+        <label for="prix"><strong>Prix</strong></label>
+        <input type="text" class="form-control" id="prix" placeholder="prix" name="prix" 
+               #prix="ngModel" ngModel prix required>
+           
+
+
+        <label for="categorie"><strong>Categorie</strong></label>
+        <select class="form-select form-select-sm" name="categorie" id="categorie" placeholder="categorie" name="categorie" ngModel categorie required>
+          <option value="" disabled>Choose a Categorie</option>
+          <option *ngFor="let categorie of categories" [ngValue]="categorie">
+            {{ categorie.name }}
+          </option>
+        </select>
+        
+               
+        <label for="ImagePath"><strong>ImagePath</strong></label>
+        <input type="text" class="form-control" id="ImagePath" placeholder="ImagePath" name="ImagePath" 
+               #ImagePath="ngModel" ngModel ImagePath required>   
+
+        <label for="description"><strong>Description</strong></label>
+        <input type="text" class="form-control" id="description" placeholder="description" name="description" 
+                      #description="ngModel" ngModel description required>   
+      </div>
+
+      <div *ngIf="success" class="alert alert-success" role="alert">
+        Produit Inséré
+    </div>
+      <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Ajouter</button>
+    </form>
+  </body>
+</html>

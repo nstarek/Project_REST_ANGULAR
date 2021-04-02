@@ -1,0 +1,60 @@
+
+<br />
+<h1> Notre séléction de disque dur</h1>
+<br />
+
+<div class="card-group">
+  <div class="card" *ngFor="let item of list" style="max-width: 13rem;">
+    
+      <img class="card-img-top" src="{{item.imagepath}}" alt="Card image cap">
+      <div class="card-body">
+        <p>{{item.libelle}}</p>
+        <h4 class="card-title2">{{item.prix}} Euros </h4>
+
+        <p><button class="btn btn-primary" (click)="getArticleParID(item.id)"> Voir plus  </button></p>
+    </div>
+  </div>
+  </div>
+
+<div *ngIf="clicked" style="width:800px; margin:0 auto;">
+  
+  <p class="id titre">Réference de l'Article: {{article.id}} </p>
+  <p class="titre">{{article.marque}}-{{article.libelle}} </p>
+  <div class="card" style="max-width: 60rem;">
+    
+  <img class="card-img" src="{{article.imagepath}}" alt="Card image cap" id="center">
+
+    <div class="card-header">
+      {{article.libelle}}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <br />
+
+        <p class="card-text">Marque : {{article.marque}} </p>
+
+        <br />
+      
+        <footer class="footer">Prix : {{article.prix}} €</footer>
+      </blockquote>
+    </div>
+  </div>
+  <br />
+  <br />
+
+  <div class="card" style="max-width: 60rem;">
+    <div class="card-header">
+      Déscription
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+
+        <p class="card-text" id="desc">{{article.description}}</p>
+
+      </blockquote>
+        
+      </div>
+
+    </div>
+</div>
+

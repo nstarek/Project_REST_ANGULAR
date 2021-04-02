@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Form to create a new article</title>
+ </head>
+<body>
+  <form action="../Servers/rest/articles/update" method="POST">
+  <label for="id">ID</label>
+  <input name="id" required="required"/>
+  <br/>
+  <label for="libelle">libelle</label>
+  <input name="libelle" required="required" />
+  <br/>
+  <label for="marque">marque</label>
+  <input name="marque" required="required" />
+  <br/>
+  <label for="prix">Prix</label>
+  <input name="prix" required="required" />
+  <br/>
+
+  <label for="categorie">categorie</label>
+  <input name="categorie" required="required" />
+  <br/>
+  
+   <label for="ImagePath">ImagePath</label>
+  <input name="ImagePath" required="required" />
+  <br/>
+
+  <input type="submit" value="Submit" />
+  </form>
+</body>
+</html>
